@@ -1,7 +1,12 @@
 # SAP_auto_import
 Import Mass Transports into SAP system
 
-# Steps:
+## Dowload or copy the content of the below files to your SAP server:
+1. auto_transport_buffer.sh
+2. auto_transport_import.sh
+3. TRANSPORT.list
+
+## Steps:
 1. Login to CI server
 2. Switch to sidadm
 3. cd to /usr/sap/trans/bin directory. Please check what is the transport direcory **DIR_TRANS** on your system first.
@@ -21,6 +26,7 @@ sh auto_transport_buffer.sh TRANSPORT.list SID 100 /usr/sap/trans/bin/TP_DOMAIN_
 ```
 
 **IMP:** It is important that the scripts are created in trans bin directory **DIR_TRANS**/bin and executed from this location - `/usr/sap/trans/bin`
+
 **IMP:** Also important is to execute this from bash prompt.
 
 
