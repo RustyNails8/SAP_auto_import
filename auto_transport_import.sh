@@ -32,13 +32,13 @@ do
     echo "`date`...Transport ${i} OS RC=${RC} SAP RC=${SAP_RC}"
     
     # Log full output if there's an error
-    if [ "$RC" -ne 0 ] || [ -n "$SAP_RC" ] && [ "$SAP_RC" -ne 0 ]; then
+    if [[ "$RC" -ne 0 ]] || [[ -n "$SAP_RC" ]] && [[ "$SAP_RC" -ne 0 ]]; then
         echo "Error importing transport ${i}:" >> ${TPERRORS}
         echo "${OUTPUT}" >> ${TPERRORS}
     fi
     
     # Decide whether to continue or break
-    if [ "$RC" -ne 0 ] && [ "$RC" -ne 4 ]; then
+    if [[ "$RC" -ne 0 ]] && [[ "$RC" -ne 4 ]]; then
         echo "Critical error occurred. Stopping import process." >> ${TPSTATUS}
         break
     fi
